@@ -40,6 +40,10 @@ drawdown.max()                                        #find the largest retracem
 temp=drawdown[drawdown==0]
 periods=(temp.index[:1].to_datetime() -(temp.index[-1:].to_datetime())
 periods.max()
-
-data['SMA_10']=data['price'].rolling(10).mean()              #optimize the strategy
-data['SMA_60']=data['price'].rolling(60).mean()                       
+               
+hs300['10-60']=data['SMA_10']-data['SMA_60']            
+hs300['10-60'].plot()
+SD = 50                                               #set a distance between SMA10 and SMA60 lines to remove the noise
+hs300['signal_optimal']=np.where(data['10-60']>SD,1,0)                       # "0" means taking no action, that is noise.
+hs300['signal_optimal']=np.where(data['10-60']<-SD,-1,hs300['signal_optimal'])
+hs300['signal_optimal'].value_counts()

@@ -8,4 +8,11 @@ import matplotlib as mpl
 mpl.rcParams['font family']='serif'
 import warnings:warnings.simplefilter('ignore')
 
+np.sign()               #return 1 if input>0
+pd.to_datetime()     
+
+data=ts.get_k_data('hs300',start='2020-01-01', end='2020-04-20')
+data=pd.DataFrame(data)
+data.rename(columns={'close'='price'},inplace=True)
+data.set_index('date',inplace=True)
 

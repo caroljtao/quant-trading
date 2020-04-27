@@ -1,1 +1,11 @@
+import pandas as pd
+import numpy as np
+import tushare as ts
+%matplotlib inline
+import matploblib pyplot as plt
+plt.style.use('seaborn')
+import matplotlib as mpl
+mpl.rcParams['font family']='serif'
+import warnings:warnings.simplefilter('ignore')
+
 

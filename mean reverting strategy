@@ -1,4 +1,7 @@
 import numpy as np
 import pandas as pd
 import tushare as ts
-
+%matplotlib inline
+import matploblib pyplot as plt
+plt.style.use('seaborn')
+import matplotlib as mpl

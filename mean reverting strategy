@@ -5,3 +5,12 @@ import tushare as ts
 import matploblib pyplot as plt
 plt.style.use('seaborn')
 import matplotlib as mpl
+
+data=ts.get_k_data('hs300',start='2020-01-01',end='2020-04-28')[['date','close']]
+data.rename(columns={'close':'price'},inplace=True)
+data['price'].plot(figsize(10,6))
+
+data['return_cum']=np.log([data['price']/data['price'].shift(1))
+SMA=50
+data['SMA']=data['price'].rolling(SMA).mean()
+threshold= 250

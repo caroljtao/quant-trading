@@ -9,7 +9,7 @@ import tushare as ts
 
 data=ts.get_k_data('hs300',start='2020-01-01',end='2020-04-24')   #to get the candlestick chart's data 
 data.head()  
-data.rename(columns{'close':'price'},inplace=True)
+data.rename(columns={'close':'price'},inplace=True)
 data.set_index('date',Inplace =True)
 
 data['SMA_10']=data['price'].rolling(10).mean()  #calculate the 10-day moving average

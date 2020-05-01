@@ -15,6 +15,8 @@ data.set_index('date',Inplace =True)
 data['SMA_10']=data['price'].rolling(10).mean()  #calculate the 10-day moving average
 data['SMA_60']=data['price'].rolling(60).mean()  #calculate the 60-day moving average
 data.tail()
+
+%pylab
 data[['price','SMA_10','SMA_60']].plot((fig.size(10,6))    #plot the closing price, 10-day and 60-day moving average trends.
 data['return_cum']=np.log(data['price']/data['price'].shift(1)) #calculate the cummulative returns.
 data['return_dis']=data['price'].pct_change                 #calculate the discrete returns

@@ -14,6 +14,7 @@ data.set_index('date',inplace=True)
 data.columns=stock_pair
 data.head()
 
+%pylab
 data['spread']=data['603976']-data['600222']
 data['spread'].plot(figsize(10,6))
 plt.ylable('spread')

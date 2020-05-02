@@ -6,6 +6,7 @@ import matploblib pyplot as plt
 plt.style.use('seaborn')
 import matplotlib as mpl
 
+%pylab
 data=ts.get_k_data('hs300',start='2020-01-01',end='2020-04-28')[['date','close']]
 data.rename(columns={'close':'price'},inplace=True)
 data['price'].plot(figsize(10,6))

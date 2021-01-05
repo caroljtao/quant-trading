@@ -14,7 +14,7 @@ data['price'].plot(figsize(10,6))
 data['return_cum']=np.log([data['price']/data['price'].shift(1))
 SMA=50
 data['SMA']=data['price'].rolling(SMA).mean()
-threshold= 250                 # distance far enough from SMA to execute the MR strategy
+threshold= 200                 # distance far enough from SMA to execute the MR strategy
 data['distance'].dropna().plot(figsize(10,6),legend=True)
 plt.axhline(threshold,color='r')
 plt.axhline(-threshold,color='r')
